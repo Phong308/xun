@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bảng nhân 10x10</title>
+</head>
+<body>
+<table border='1' width='300' cellspacing='0' cellpadding='3'>
+    <!-- Dòng đầu tiên chứa tiêu đề cột -->
+    <tr>
+        <th></th> <!-- Ô trống ở góc trên bên trái -->
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+    </tr>
+    <!-- Dùng vòng lặp để tạo nội dung của bảng -->
+    <!-- Vòng lặp ngoài duyệt qua 10 dòng -->
+    <script>
+    for (let i = 1; i <= 10; i++) {
+        document.write("<tr>");
+        // Ô đầu tiên trong mỗi dòng là giá trị của i
+        document.write("<th>" + i + "</th>");
+        // Vòng lặp trong duyệt qua 10 cột
+        for (let j = 1; j <= 10; j++) {
+            // Tạo ô chứa kết quả i * j
+            document.write("<td>" + (i * j) + "</td>");
+        }
+        document.write("</tr>");
+    }
+    </script>
+</table>
+</body>
+</html>
