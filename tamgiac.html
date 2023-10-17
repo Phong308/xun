@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Right-Angled Triangle Printer</title>
+</head>
+<body>
+    <h1>Right-Angled Triangle Printer</h1>
+    <label for="height">Enter the height of the triangle:</label>
+    <input type="number" id="height" min="1">
+    <button onclick="printRightAngledTriangle()">Print Triangle</button>
+    <div id="triangleContainer"></div>
+
+    <script>
+        function printRightAngledTriangle() {
+            const height = document.getElementById('height').value;
+            const triangleContainer = document.getElementById('triangleContainer');
+            triangleContainer.innerHTML = '';
+
+            if (height < 1) {
+                alert('Please enter a positive integer.');
+                return;
+            }
+
+            for (let i = 1; i <= height; i++) {
+                let triangleRow = '';
+                for (let j = 1; j <= i; j++) {
+                    triangleRow += '* ';
+                }
+                const triangleRowElement = document.createElement('p');
+                triangleRowElement.textContent = triangleRow;
+                triangleContainer.appendChild(triangleRowElement);
+            }
+        }
+    </script>
+</body>
+</html>
