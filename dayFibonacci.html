@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dãy Fibonacci</title>
+</head>
+<body>
+    <h1>Chương trình tính dãy Fibonacci</h1>
+    <label for="n">Nhập số nguyên dương n:</label>
+    <input type="number" id="n" min="1">
+    <button onclick="generateFibonacci()">Tạo dãy Fibonacci</button>
+    <p id="result"></p>
+
+    <script>
+        function generateFibonacci() {
+            const n = document.getElementById('n').value;
+
+            if (n <= 0) {
+                alert('Vui lòng nhập một số nguyên dương.');
+                return;
+            }
+
+            let fibNumbers = [0, 1];
+            for (let i = 2; i < n; i++) {
+                fibNumbers[i] = fibNumbers[i - 1] + fibNumbers[i - 2];
+            }
+
+            const result = fibNumbers.slice(0, n).join(', ');
+            document.getElementById('result').textContent = `Dãy Fibonacci gồm ${n} số: ${result}`;
+        }
+    </script>
+</body>
+</html>
