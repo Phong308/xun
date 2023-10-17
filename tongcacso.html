@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate Sum in Range</title>
+</head>
+<body>
+    <h1>Calculate Sum in Range</h1>
+    <label for="a">Enter an integer a:</label>
+    <input type="number" id="a">
+    <label for="b">Enter an integer b:</label>
+    <input type="number" id="b">
+    <button onclick="calculateSum()">Calculate Sum</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateSum() {
+            const a = parseInt(document.getElementById('a').value);
+            const b = parseInt(document.getElementById('b').value);
+            const resultElement = document.getElementById('result');
+
+            if (isNaN(a) || isNaN(b)) {
+                resultElement.textContent = 'Please enter valid integers for both a and b.';
+                return;
+            }
+
+            if (a > b) {
+                resultElement.textContent = 'a must be less than or equal to b.';
+                return;
+            }
+
+            let totalSum = 0;
+            for (let i = a; i <= b; i++) {
+                totalSum += i;
+            }
+
+            resultElement.textContent = `The sum of numbers from ${a} to ${b} is: ${totalSum}`;
+        }
+    </script>
+</body>
+</html>
