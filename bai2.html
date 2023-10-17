@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính tổng các số từ 1 đến n</title>
+</head>
+<body>
+    <h2>Nhập số và tính tổng</h2>
+
+    <label for="numberInput">Nhập số nguyên dương:</label>
+    <input type="number" id="numberInput" placeholder="Nhập số...">
+    <button onclick="calculateSum()">Tính tổng</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateSum() {
+            // Lấy giá trị từ input
+            let num = parseInt(document.getElementById("numberInput").value);
+
+            // Kiểm tra nếu num không hợp lệ
+            if (isNaN(num) || num <= 0) {
+                document.getElementById("result").innerHTML = "Vui lòng nhập số nguyên dương hợp lệ.";
+            } else {
+                // Tính tổng
+                let total = 0;
+                for (let i = 1; i <= num; i++) {
+                    total += i;
+                }
+
+                // Hiển thị kết quả
+                document.getElementById("result").innerHTML = "Tổng các số từ 1 đến " + num + " là: " + total;
+            }
+        }
+    </script>
+</body>
+</html>
