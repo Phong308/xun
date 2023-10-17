@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Số đảo ngược</title>
+</head>
+<body>
+    <h1>Chương trình số đảo ngược</h1>
+    <label for="number">Nhập số nguyên dương:</label>
+    <input type="number" id="number" min="1">
+    <button onclick="reverseNumber()">Tạo số đảo ngược</button>
+    <p id="result"></p>
+
+    <script>
+        function reverseNumber() {
+            const number = document.getElementById('number').value;
+
+            if (number <= 0) {
+                alert('Vui lòng nhập một số nguyên dương.');
+                return;
+            }
+
+            const reversedNumber = parseInt(number.toString().split('').reverse().join(''));
+            document.getElementById('result').textContent = `Số đảo ngược của ${number} là: ${reversedNumber}`;
+        }
+    </script>
+</body>
+</html>
