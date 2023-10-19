@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Resizable Text Box</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .resizable-box {
+            display: inline-block;
+            border: 1px solid #000;
+            padding: 10px;
+            resize: both;
+            overflow: auto;
+            font-size: 24px;
+            min-width: 100px;
+            max-width: 400px;
+            min-height: 100px;
+            max-height: 200px;
+            text-align: center;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resizable-box" contenteditable="true" spellcheck="false" id="textBox">
+        This is a resizable text box. Start typing...
+    </div>
+
+    <script>
+        const textBox = document.getElementById("textBox");
+        let currentText = "";
+
+        function updateText() {
+            textBox.innerText = currentText;
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key !== "Enter") {
+                currentText += event.key;
+                updateText();
+            }
+        });
+    </script>
+</body>
+
+</html>
