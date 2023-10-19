@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caro Game Simple</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        td {
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px dashed #777;
+        }
+    </style>
+</head>
+<body>
+    <h3>Caro Game Simple</h3>
+    <table>
+        <tbody id="carogame">
+        </tbody>
+    </table>
+    <input type="button" value="Change Value" onclick="changeValue()">
+    <script>
+        let board = [];
+        let data = "";
+
+        for (let i = 0; i < 5; i++) {
+            board[i] = [];
+            for (let j = 0; j < 5; j++) {
+                board[i][j] = 0;
+            }
+        }
+
+        function renderBoard() {
+            data = "";
+            for (let i = 0; i < 5; i++) {
+                data += "<tr>";
+                for (let j = 0; j < 5; j++) {
+                    data += `<td>${board[i][j]}</td>`;
+                }
+                data += "</tr>";
+            }
+            document.getElementById("carogame").innerHTML = data;
+        }
+
+        renderBoard();
+
+        function changeValue() {
+            let positionX = prompt("Enter X: ");
+            let positionY = prompt("Enter Y: ");
+            let value = prompt("Enter new value: ");
+            if (positionX >= 0 && positionX < 5 && positionY >= 0 && positionY < 5) {
+                board[positionX][positionY] = value;
+                renderBoard();
+            } else {
+                alert("Invalid position. Please enter values between 0 and 4.");
+            }
+        }
+    </script>
+</body>
+</html>
