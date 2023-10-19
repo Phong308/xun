@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Join Array Elements</title>
+</head>
+<body>
+    <script>
+        let myColor = ["Red", "Green", "White", "Black"];
+        let result = myColor.join(",");
+        document.write(result);
+    </script>
+</body>
+</html>
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Insert Dashes</title>
+</head>
+<body>
+    <script>
+        function insertDashes(number) {
+            let numStr = number.toString();
+            let result = numStr[0];
+
+            for (let i = 1; i < numStr.length; i++) {
+                if (parseInt(numStr[i - 1]) % 2 === 0 && parseInt(numStr[i]) % 2 === 0) {
+                    result += '-';
+                }
+                result += numStr[i];
+            }
+
+            return result;
+        }
+
+        let inputNumber = 25468;
+        let dashedNumber = insertDashes(inputNumber);
+        document.write(dashedNumber);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Convert to Uppercase</title>
+</head>
+<body>
+    <script>
+        function convertToUpperCase(str) {
+            let result = '';
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] >= 'a' && str[i] <= 'z') {
+                    result += str[i].toUpperCase();
+                } else {
+                    result += str[i];
+                }
+            }
+            return result;
+        }
+
+        let inputString = "The Quick Brown Fox";
+        let uppercaseString = convertToUpperCase(inputString);
+        document.write(uppercaseString);
+    </script>
+</body>
+</html> -->
