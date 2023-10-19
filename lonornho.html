@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Find Min and Max in Array</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Random Array of Numbers</h1>
+    <div id="array"></div>
+    <h2>Minimum Value:</h2>
+    <p id="minValue"></p>
+    <h2>Maximum Value:</h2>
+    <p id="maxValue"></p>
+
+    <script>
+        function findMin(arr) {
+            var min = arr[0];
+            for (var i = 1; i < arr.length; i++) {
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+
+        function findMax(arr) {
+            var max = arr[0];
+            for (var i = 1; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+        var nums = [];
+        for (var i = 0; i < 100; i++) {
+            nums[i] = Math.floor(Math.random() * 101);
+        }
+
+        document.getElementById("array").textContent = nums.join(', ');
+        var minValue = findMin(nums);
+        document.getElementById("minValue").textContent = minValue;
+        var maxValue = findMax(nums);
+        document.getElementById("maxValue").textContent = maxValue;
+    </script>
+</body>
+
+</html>
