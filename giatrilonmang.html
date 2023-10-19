@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Find Maximum Value in Array</title>
+    <style>
+        body {
+            padding-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Array: [-3, 5, 1, 3, 2, 10]</p>
+    <button id="btnFindMax">Find Maximum Value</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("btnFindMax").addEventListener("click", function () {
+            let numbers = [-3, 5, 1, 3, 2, 10];
+            let max = numbers[0];
+
+            for (let i = 1; i < numbers.length; i++) {
+                if (numbers[i] > max) {
+                    max = numbers[i];
+                }
+            }
+
+            document.getElementById("result").textContent = "Maximum value: " + max;
+        });
+    </script>
+</body>
+
+</html>
